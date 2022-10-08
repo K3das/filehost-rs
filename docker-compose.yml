@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  rs-imagehost:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - "imagehost-data:/data"
+    environment:
+      - SECRET_KEY
+      - BASEURL=http://localhost:8000
+
+
+volumes:
+  imagehost-data:
